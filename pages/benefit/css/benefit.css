@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+    word-break: keep-all;
+}
+body {background: #FCF6ED;}
+img {max-width: 100%;}
+
+#main figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#main figure img {
+    width: 100%;
+    height: 100%;
+}
+#main figure img {
+  display: inline-block;
+  overflow: hidden;
+  animation: shrinkToNormal 3s ease-out forwards;
+}
+
+@keyframes shrinkToNormal {
+  from {
+    transform: scale(1.2); /* 처음에 120%라서 넘침 */
+  }
+  to {
+    transform: scale(1);   /* 원래 크기 */
+  }
+}
+/* main */
+
+.botWrap {
+    position: relative;
+    height: 100px;
+    margin-bottom: 90px;
+}
+.botWrap a {
+    width: 100px;
+    height: 100px;
+    background-color: #BF0B34;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -50%; left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.botWrap a img {
+    width: 22px;
+    height: 10px;
+}
+.botWrap::after {
+    content: '';
+    width: 270px;
+    height: 85px;
+    background: url(../img/smoothBg-cream.svg) no-repeat center/cover;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% - 2px);
+    transform: translateX(-50%);
+    display: block;
+}
+/* botWrap */
+
+#wrap {
+    padding: 103px 0 50px;
+}
+#wrap .inner {
+    max-width: 1480px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.inner h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #BF0B34;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.inner .cont {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+.inner .cont figure {
+    border-radius: 40px;
+    overflow: hidden;
+}
+.title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #382f2d;
+    line-height: 1.4;
+    letter-spacing: -0.1px;
+    margin-bottom: 20px;
+}
+.inner .cont .title .color {
+    font-size: 40px;
+    font-weight: 700;
+    color: #BF0B34;
+    line-height: 1.4;
+    letter-spacing: -0.1px;
+}
+.inner .cont .txt span {
+    font-size: 18px;
+    color: #746D6C;
+}
+.inner .cont2 figure {
+    border-radius: 40px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.inner .cont2 .txt {text-align: center;}
+.inner .cont2 .txt span {
+    display: block;
+    font-size: 20px;
+    color: #746D6C;
+}
