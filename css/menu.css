@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+    word-break: keep-all;
+}
+body {background: #fff;}
+
+#main figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#main figure img {
+    width: 100%;
+    height: 100%;
+}
+#main figure img {
+  display: inline-block;
+  overflow: hidden;
+  animation: shrinkToNormal 3s ease-out forwards;
+}
+
+@keyframes shrinkToNormal {
+  from {
+    transform: scale(1.2); /* 처음에 120%라서 넘침 */
+  }
+  to {
+    transform: scale(1);   /* 원래 크기 */
+  }
+}
+/* main */
+
+.botWrap {
+    position: relative;
+    height: 100px;
+    margin-bottom: 90px;
+}
+.botWrap a {
+    width: 100px;
+    height: 100px;
+    background-color: #BF0B34;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -50%; left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.botWrap a img {
+    width: 22px;
+    height: 10px;
+}
+.botWrap::after {
+    content: '';
+    width: 270px;
+    height: 85px;
+    background: url(../img/smoothBg-wh.svg) no-repeat center/cover;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% - 2px);
+    transform: translateX(-50%);
+    display: block;
+}
+/* botWrap */
+
+#tabs {
+    text-align: center;
+    padding-bottom: 130px;
+}
+#tabs h4 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #BF0B34;
+    margin-bottom: 50px;
+}
+.tabMenu {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.tabMenu li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 190px;
+  height: 60px;
+  background: #F7EEDD;
+  border-radius: 100px;
+  font-size: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.tabMenu li:hover {
+    background: #BF0B34;
+    color: #fff;
+    font-weight: 700;
+}
+.tabMenu li.active {
+  background: #BF0B34;
+  color: #fff;
+  font-weight: 700;
+}
+/* tabmenu */
+
+.tabContent .tabPane .title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #382F2D;
+}
+.tabContent .tabPane .img p {
+    font-size: 20px;
+    color: #382F2D;
+    margin-top: 15px;
+}
+.tabContent .tabPane > div {
+    padding: 70px 0;
+}
+.tabContent .tabPane > div:nth-child(2),
+.tabContent .tabPane > div:nth-child(4),
+.tabContent .tabPane > div:nth-child(6) {
+    background: #FCF6ED;
+    border-radius: 50px;
+}
+.tabContent .tabPane .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+.tabContent .tabPane .menu li {
+    width: calc((100% / 5) - 24px);
+}
+.tabPane .menu li img {
+    width: 241px;
+    height: 293px;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+.tabPane .menu li img:hover {
+    transform: scale(1.05);
+}
+/* drink */
+.tabContent .tabPane .foodMenu .menu {
+    gap: 40px 20px;
+}
+.tabPane .foodMenu {
+    max-width: 1480px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.tabPane .foodMenu .menu {
+    font-size: 20px;
+    color: #382F2D;
+    margin-top: 15px;
+}
+.tabPane .foodMenu .menu li {
+    width: calc((100% / 4) - 15px);
+}
+/* menu */
+.tabContent .tabPane .mdMenu .menu {
+    gap: 40px 20px;
+}
+.tabPane .mdMenu {
+    max-width: 1480px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.tabPane .mdMenu .menu {
+    font-size: 20px;
+    color: #382F2D;
+    margin-top: 15px;
+}
+.tabPane .mdMenu .menu li {
+    width: calc((100% / 4) - 15px);
+}
+.tabContent {
+  position: relative;
+  overflow: hidden;
+}
+.tabPane {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.tabPane.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  z-index: 1;
+}
